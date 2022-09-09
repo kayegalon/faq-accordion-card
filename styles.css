@@ -1,0 +1,176 @@
+/* to-do 
+-add some missing features and media queries, refer to design images
+-clean up code, make it more readable
+*/
+
+:root {
+	--colors-text-primary-blue: hsl(238, 29%, 16%);
+	--colors-text-primary-red: hsl(14, 88%, 65%);
+	--colors-text-neutral-blue-very-dark: hsl(237, 12%, 33%);
+	--colors-text-neutral-blue-dark: hsl(240, 6%, 50%);
+	--colors-background-gradient-violet: hsl(273, 75%, 66%);
+	--colors-background-gradient-blue: hsl(240, 73%, 65%);
+	--colors-divider: 240, 5%, 91%;
+	--font-size: 12px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Kumbh Sans", sans-serif;
+	font-size: 14px;
+	/* fix background gradient using variables */
+	background-repeat: no-repeat;
+	background: linear-gradient(180deg, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+	/* fix background gradient using variables*/
+	margin: 0;
+	padding-top: 1rem;
+	height: 100vh;
+	overflow: hidden;
+}
+
+#card {
+	display: flex;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: -120% 60%;
+	background-image: url("bg-pattern-desktop.svg");
+	border: 1px;
+	width: 80%;
+	height: 35rem;
+	margin-top: 3rem;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	border-radius: 10px;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	padding-right: 6rem;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 15px;
+}
+
+#image {
+	margin-top: 1rem;
+	display: flex;
+}
+
+.box {
+	margin-left: -9rem;
+	margin-right: -3rem;
+	margin-top: 11rem;
+	width: 200px;
+	height: 200px;
+	z-index: 1;
+}
+
+.woman {
+	margin-left: -7rem;
+	width: 500px;
+}
+
+.woman1 {
+	visibility: hidden;
+	width: 0;
+}
+
+#faq {
+	display: flex;
+	flex-direction: column;
+	margin-left: 5rem;
+}
+
+.question-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.arrow {
+	height: 12px;
+	position: fixed;
+	right: 0;
+	margin-right: 16rem;
+	margin-top: .1rem;
+}
+
+.answer {
+	font-size: 12px;
+}
+
+hr {
+	border: 1px solid hsl(var(--colors-divider));
+	width: 29.5rem;
+	margin-left: -0.5rem;
+}
+
+.attribution { 
+	margin-top: 1rem;
+	font-size: 14px; 
+	text-align: center; 
+}
+
+.attribution a { 
+	color: hsl(273, 75%, 66%); 
+}
+
+
+/*** MEDIA QUERIES ***/
+@media screen and (max-width: 480px) and (min-width: 320px) {
+	body {
+		overflow: auto;
+		padding-top: 5rem;
+		padding-bottom: 3rem;
+		height: 100%;
+	}
+	#card {
+		display: flex;
+		flex-direction: column;
+		background-attachment: scroll;
+		background-position: 50% -1%;
+		background-image: url("bg-pattern-mobile.svg");
+		height: 48rem;
+	}
+	
+	#image {
+		margin-top: -8rem;
+	}
+	
+	.box, .woman {
+		display: none;
+	}
+	
+	.woman1 {
+		visibility: visible;
+		width: 100%;
+		position: relative;
+		left: 3rem;
+		top: -2.5rem;
+	}
+	
+	#faq {
+		margin-left: 2rem;
+	}
+	
+	h1 {
+		text-align: center;
+		font-size: 3rem;
+		margin-left: 3rem;
+	}
+	
+	.question-item {
+		display: flex;
+	}
+	
+	.arrow {
+		position: absolute;
+		right: -11rem;
+		margin-top: -0.5rem;
+	}
+	
+	hr {
+		width: 130%;
+	}
+	
+}
